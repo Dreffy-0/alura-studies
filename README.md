@@ -1,46 +1,132 @@
-# Getting Started with Create React App
+# Alura Studies - Meu primeiro Projeto typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto foi criado usando CRA ([Create React App](https://github.com/facebook/create-react-app)) e foi o meu primeiro projeto criado desde o início com typescript.
 
-## Available Scripts
+## :heavy_check_mark: Técnicas e tecnologias utilizadas
 
-In the project directory, you can run:
+- React
+- Sass
+- CSS modules
+- React Hooks
+- TypeScript
 
-### `npm start`
+## Como acessar o projeto?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Caso deseje apenas visualizar de forma rapida, aqui está o link do [deploy na Vercel](https://), caso queira executar localmente no seu dispositivo, aqui está um passo-a-passo:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Abra o terminal da sua preferência
 
-### `npm test`
+### Clone o projeto do repositorio para seu dispositivo `git clone https://github.com/Dreffy-0/alura-studies.git`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### *Também é possivel baixar o repositorio diretamente do github, nesse caso o projeto vem dentro de um arquivo .zip*
 
-### `npm run build`
+### Entre na pasta do projeto `cd /alura-studies`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Instale as dependencias do projeto `npm install` ou `yarn install`(caso utilize o yarn)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Inicie o servidor local `npm start` ou `yarn start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Saiba Mais
 
-### `npm run eject`
+Voce pode aprender mais sobre o create-react-app acessando a [documentação Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para saber mais do React, acesse [documentação React](https://reactjs.org/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!--
+Documentação pessoal
+?	syntax class components React
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+TODO: Criando o botao:
+*	interface ButtonProps {
+*		children?: React.ReactNode;
+*		type?: "button" | "submit" | "reset" | undefined;
+*		onClick?: () => void;
+*	}
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*	class Button extends React.Component<ButtonProps> {
+*		render() {
+*			const { type = "button", onClick } = this.props;
+*			return (
+*				<button onClick={onClick} type={type} className={styles.botao}>
+*					{this.props.children}
+*				</button>
+*			);
+*		}
+*	}
 
-## Learn More
+TODO: Criando o formulario:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+*	class Formulario extends React.Component<{
+*		setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>;
+*	}> {
+*		state = {
+*			tarefa: "",
+*			tempo: "00:00",
+*		};
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*		adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
+*			evento.preventDefault();
+*			this.props.setTarefas(tarefasAntigas => [
+*				...tarefasAntigas,
+*				{
+*					...this.state,
+*					selecionado: false,
+*					completado: false,
+*					id: uuidv4(),
+*				},
+*			]);
+*			this.setState({
+*				tarefa: "",
+*				tempo: "00:00",
+*			});
+*		}
+
+*		render(): React.ReactNode {
+*			return (
+*				<form
+*					className={styles.novaTarefa}
+*					onSubmit={this.adicionarTarefa.bind(this)}
+*				>
+*					<div className={styles.inputContainer}>
+*						<label>Tarefa</label>
+*						<input
+*							type="text"
+*							name="tarefa"
+*							value={this.state.tarefa}
+*							onChange={evento =>
+*								this.setState({
+*									...this.state,
+*									tarefa: evento.target.value,
+*								})
+*							}
+*							id="tarefa"
+*							placeholder="O que você quer estudar?"
+*							required
+*						/>
+*					</div>
+*					<div className={styles.inputContainer}>
+*						<label>Tempo</label>
+*						<input
+*							type="time"
+*							step="1"
+*							name="tempo"
+*							value={this.state.tempo}
+*							onChange={evento =>
+*								this.setState({
+*									...this.state,
+*									tempo: evento.target.value,
+*								})
+*							}
+*							id="tempo"
+*							min="00:00:00"
+*							max="01:30:00"
+*							required
+*						/>
+*					</div>
+*					<Button type="submit">adicionar</Button>
+*				</form>
+*			);
+*		}
+*	}
+
+ -->
