@@ -12,7 +12,7 @@ Esse projeto foi criado usando CRA ([Create React App](https://github.com/facebo
 
 ## Como acessar o projeto?
 
-Caso deseje apenas visualizar de forma rapida, aqui está o link do [deploy na Vercel](https://), caso queira executar localmente no seu dispositivo, aqui está um passo-a-passo:
+Caso deseje apenas visualizar de forma rapida, aqui está o link do [deploy na Vercel](https://alura-studies-umber.vercel.app/), caso queira executar localmente no seu dispositivo, aqui está um passo-a-passo:
 
 ### Abra o terminal da sua preferência
 
